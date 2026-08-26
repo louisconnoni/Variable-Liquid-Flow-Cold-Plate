@@ -52,59 +52,56 @@ The initial sizing of the cold plates was calculated using equations provided by
 
 *Plots of serpentine cold plate*
 
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Gyroid Structure generated in MATLAB*
+
 ## Ansys Simulation
 
-Afterwards the 4 cold plates were designed in Solidworks following the design specifications. The first simulations used initial conditions of .4 L/min, 100 watts and an aluminum construction with water as the working fluid. Further tests were done by evaluating how a different # of fins or fluid velocity affected the heat removal. Lastly a Mesh independence survey was done to verify the simulation was best representing the results. 
+Afterwards the 4 cold plates were designed in Solidworks following the design specifications. The first simulations used initial conditions of .4 L/min, 100 watts and an aluminum construction with water as the working fluid. Further tests were done by evaluating how a different # of fins or fluid velocity affected the heat removal. Lastly a Mesh independence survey was done to verify the simulation was best representing the results.
 
-### Chassis
-<!-- CHASSIS CAD -->
+### Simulation Results
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Initial Serpentine Results*
+
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Flow speed and changing fluid temperature*
+
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Mesh Independance Study Plot*
+
+### Control Wiring
+
+The control wiring for the project included 3 thermistors to measure the incoming water temperature, the plate temperature, and the outlet temperature. The plate temperature was used as the primary input to the PID loop. 
+
+A second circuit was used for the PWM circuit. a 2.2k pulldown was used to protect the Arduino from high current flow. A flyback diode was used to prevent energy storage from induction. A power supply was connected to the drain and source ends of a MOSFET while the Arduino was connected to the switch end.
+
+
+<!-- Circuit Board with Callouts -->
 <img src="assets/CADCombatRobot.png" width="56%" />
-<!-- WEAPON CAD -->
+<!-- Temperature Sensing code -->
+<!-- <img src="assets/freedom-weapon-cad.png" width="49%" /> -->
+<!-- PID Code -->
 <!-- <img src="assets/freedom-weapon-cad.png" width="49%" /> -->
 
-*Chassis CAD, built around a low-profile carbon fiber plate to minimize weight while protecting the drivetrain and electronics.*
+*Temperature sensing circuit and PID loop*
 
 ## Fabrication
 
 <!-- PLA PROTOTYPE -->
 <img src="assets/FREEDOMPLACROPPED.jpeg" width="56%" />
 
-*Once the design was validated in PLA, the final weapon system components were machined from 4140 alloy steel on a lathe and mill, including turning the dead shaft and milling the weapon hub to final tolerance.*
-
-## Electronics
-
-Electronics was another main area where I worked closely with the chassis team, drawing on prior experience with RC controllers to help the group get the system running reliably. Electrical integration covered the full signal and power chain: soldering motor and battery connections, tuning the weapon and drive ESCs for consistent throttle response, configuring the receiver (mapping controller inputs to the correct channel outputs), and adjusting the throttle curve to fine-tune drive responsiveness for competition conditions.
-
-
-<img src="assets/ElectronicsCrop.png" width="57%" />
-
-*PLA prototype with electronics installed for driving test.*
-
-<img src="assets/IMG_1314.jpeg" width="35%" />
-
-*FlySky transmitter subtrim configuration, used to fine-tune channel centering and drive responsiveness ahead of competition.*
-
-## Testing & Demo
-
-<!-- DRIVING DEMO VIDEO -->
-<video src="https://github.com/user-attachments/assets/a1d59dde-191d-4497-a97f-fc3ec471614c" controls width="200"></video>
-
-*FREEDOM's drivetrain under remote control. The weapon system isn't shown here, as no safe testing environment was available prior to competition.*
-
-## Status
-
-FREEDOM competed at NHRL as part of Villanova Combat Robotics' first-ever competition cohort. The night before competition, the CNC machine's chuck shattered with no replacement available, forcing the team to manually machine key weapon features under significant time pressure. This left no window to test the weapon system before competition, and the resulting parts had tolerance and balance error that the manual process couldn't fully control. Under competition RPM, this caused the weapon to vibrate loose mid-match, and the bot was eliminated quickly as a result. The weapon system, from CAD through machining and electrical integration, was designed, built, and fielded as a complete, competition-ready system, and this experience directly shaped both the lessons below and my priorities heading into this year's build.
-
-## Lessons Learned
-
-- **Build in schedule margin.** With no buffer before competition, a single equipment failure eliminated the ability to test before fielding the robot. Future builds need machining and assembly finished with enough lead time to survive a setback like this.
-- **Don't rely on a single point of failure for critical fabrication.** The CNC being unavailable with no backup plan (alternate machine, outside shop, or manual-machining-friendly design as a fallback) turned one broken part into a cascading failure.
-- **Weapon length likely drove much of the difficulty.** The weapon's length accounted for a large share of the robot's total weight, which tightened the margin everywhere else in the design and likely contributed to the tolerance and balance issues under manual machining.
+*prototypes were created in PLA to be used for flow testing evaluating working pressure drop and flow.*
 
 ## Future Work
 
-This year, I'm stepping into a broader leadership role as co-lead for the entire robot, directing mechanical design and build scheduling across all subsystems, while continuing to lead weapon system development directly. I'm also developing a training curriculum for new members covering soldering, SolidWorks/CAD, embedded systems, machine shop fabrication (lathe, mill, CNC), and FEA, to build technical capacity across the growing team. Planned changes for the next build include:
+- **Reprinting the cold plates**: The 3D printer used for manufacturing lost power to heated bed causing small deformities in the print making them incapable of holding a seal. Future 3D prints should not encounter the same issue allowing for further testing to validate CFD results. 
+- **Further Mesh refinement** Mesh Geometry was limited to Ansys student mesh sizes. Further mesh sizing could be done by adaptive mesh sizing or body of influence.  
 
-- **Shortening the weapon** to reduce weight, moment of inertia, and stress on the mount, easing both machining tolerances and structural demands
-- **Redesigning the weapon shape** to be more robust to imprecision from manual machining, in case CNC access is disrupted again
-- **Building schedule margin and equipment contingencies into the build timeline**, so a single point of failure can't eliminate the team's ability to test before competition
+## Lessons Learned
+
+- **Be mindful of ease of manufacturability** Working on the project made me consider how the cold plate could be machined. The channels were sized in way to avoid breaking tools. Additionally the parts were designed to be manufactured using only a 3 axis CNC. 
+- **create flow tight design** The design lacked some necessary mounting screws to ensure a sealed environment. 
