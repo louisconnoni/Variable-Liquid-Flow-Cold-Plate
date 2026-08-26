@@ -20,13 +20,13 @@ The second aspect of the project was to design a PID loop to control the flow ra
 ## Bill of Materials
 | Component | Function | Part | Photo |
 |---|---|---|---|
-| Pump | Sized to provide sufficient flow to pull heat away  | BadAss 2315-1480Kv Brushless Motor | <img src="assets/WheelMotor.jpg" width="80" /> |
-| Nozzle | Powers wheel drivetrain | Max Brushless 2006 Mk2 Beetleweight Planetary Gearmotor | <img src="assets/DriveMotor.webp" width="80" /> |
-| Thermistor | Controls weapon motor speed | Vortex 80A ESC (Beetle Weapon / Big Bot Drive) | <img src="assets/WeaponsESC.webp" width="80" /> |
-| Diode | Raw stock for weapon fabrication | 2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/ESC.webp" width="80" /> |
-| Arduino Nano | Raw stock for dead shaft fabrication | 1/2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/DeadShaft.jpg" width="80" /> |
-| 20 AWG Wire | Lightweight structural plate for chassis | Carbon Fiber Plate | <img src="assets/CarbonFiberPlate.jpg" width="80" /> |
-| MOSFET | Support rotating shafts | TRITAN Radial Ball Bearing 6000, Dbl Sealed, 10 mm Bore, 26 mm OD, 8 mm Wd | <img src="assets/BearingCombat.jpg" width="80" /> |
+| Pump | Sized to provide sufficient flow to pull heat away  | Kamoer 400ml/min | <img src="assets/WheelMotor.jpg" width="80" /> |
+| Nozzle | Powers wheel drivetrain | sized to match outer diameter of pump  | <img src="assets/DriveMotor.webp" width="80" /> |
+| Thermistor | changes resistance value based upon temperature | Vortex 80A ESC (Beetle Weapon / Big Bot Drive) | <img src="assets/WeaponsESC.webp" width="80" /> |
+| Diode | Used to prevent energy build up from inductive load | 2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/ESC.webp" width="80" /> |
+| Arduino Nano | Used to run PID loop | 1/2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/DeadShaft.jpg" width="80" /> |
+| 20 AWG Wire | Used to safely transmit power to pump | Carbon Fiber Plate | <img src="assets/CarbonFiberPlate.jpg" width="80" /> |
+| MOSFET | Used to control pump power | TRITAN Radial Ball Bearing 6000, Dbl Sealed, 10 mm Bore, 26 mm OD, 8 mm Wd | <img src="assets/BearingCombat.jpg" width="80" /> |
 | Timing Belt Pulley | Transfers rotational drive to belt | High-Strength GT Timing Belt Pulley, Press-Fit, 9 mm Max Belt Width, 3/16" Shaft, 16T | <img src="assets/TimingBeltPully.png" width="80" /> |
 | Timing Belt | Transmits drive motor power | High-Strength Ultra-Quiet Timing Belt, Curved Teeth, 9 mm, 165-3P-09, Gates PowerGrip GT | <img src="assets/TimingBeltcrop.png" width="80" /> |
 | Wheels | Provide traction/mobility | BaneBots Wheel, 2" x 0.8", Hub Mount, 50A, Blue | <img src="assets/Wheelscombatrobot.jpg" width="80" /> |
@@ -34,13 +34,27 @@ The second aspect of the project was to design a PID loop to control the flow ra
 | Transmitter | Sends control inputs to robot | FlySky FS-i6 6CH Transmitter | <img src="assets/RecieverBOM.jpg" width="80" /> |
 | Receiver | Receives transmitter signal, outputs to ESCs | FlySky FS-iA6B 6CH Receiver | <img src="assets/Screenshot 2026-08-14 005118.png" width="80" /> |
 
-## Design & CAD
-The frame system went through multiple design iterations in SolidWorks before being finalized for machining. As Frame Systems Design Lead, this design work, and the machining that followed, was my primary responsibility on the team. Design iterations were mainly focused on maneuverability, deflecting oponents weapons, handling weapon vibration, and weight. Throughout this process, I worked closely with the weapons team to make sure the weapon would mount correctly, function as intended within the chassis geometry, and stay within the robot's overall weight budget.
+## Initial Calculations and Sizing
+The initial sizing of the cold plates was calculated using equations provided by Advanced Thermal Solutions. Initial conditions were based upon common sizing and required conditions for electronic management. Many values such as density, thermal conductivity and specific heat were based upon the average fluid temperature as the water travels through the system. Ultimately using the maximum surface temperature, pump power and ease of manufacturing. channel width for the pin-fin was calculated to be 1.9 mm for the pin fin and straight fin and 6.0 mm for the serpentine plate. A fourth cold plate was designed using gyroids, a geometric shape with a high surface area while allowing fluid flow. The gyroid design was designed in MATLAB then converted to an STL file.
 
-### Weapon
+
+### Calculations
 <img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
 
-*CAD design of the vertical spinner and dead shaft assembly. The weapon uses ball bearings and 3D-printed spacers mounted on the dead shaft, allowing the spinner to be belt-driven while the shaft itself remains stationary. The dead shaft mounts to aluminum side walls, shown below in the Chassis design. Simple FEA was performed to confirm the dead shaft and weapon could withstand impact loading from opposing robots.*
+*Initial calculations used by Advanced Thermal Solutions*
+
+### Plots
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Plots of straight and pin fin Cold Plate*
+
+<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+
+*Plots of serpentine cold plate*
+
+## Ansys Simulation
+
+Afterwards the 4 cold plates were designed in Solidworks following the design specifications. The first simulations used initial conditions of .4 L/min, 100 watts and an aluminum construction with water as the working fluid. Further tests were done by evaluating how a different # of fins or fluid velocity affected the heat removal. Lastly a Mesh independence survey was done to verify the simulation was best representing the results. 
 
 ### Chassis
 <!-- CHASSIS CAD -->
