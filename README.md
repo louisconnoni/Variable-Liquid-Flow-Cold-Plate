@@ -21,12 +21,12 @@ The second aspect of the project was to design a PID loop to control the flow ra
 | Component | Function | Part | Photo |
 |---|---|---|---|
 | Pump | Sized to provide sufficient flow to pull heat away  | Kamoer 400ml/min | <img src="assets/WheelMotor.jpg" width="80" /> |
-| Nozzle | Powers wheel drivetrain | sized to match outer diameter of pump  | <img src="assets/DriveMotor.webp" width="80" /> |
-| Thermistor | changes resistance value based upon temperature | Vortex 80A ESC (Beetle Weapon / Big Bot Drive) | <img src="assets/WeaponsESC.webp" width="80" /> |
-| Diode | Used to prevent energy build up from inductive load | 2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/ESC.webp" width="80" /> |
-| Arduino Nano | Used to run PID loop | 1/2" Alloy Steel Round Bar, 4140 Annealed, Cold Finish | <img src="assets/DeadShaft.jpg" width="80" /> |
-| 20 AWG Wire | Used to safely transmit power to pump | Carbon Fiber Plate | <img src="assets/CarbonFiberPlate.jpg" width="80" /> |
-| MOSFET | Used to control pump power | TRITAN Radial Ball Bearing 6000, Dbl Sealed, 10 mm Bore, 26 mm OD, 8 mm Wd | <img src="assets/BearingCombat.jpg" width="80" /> |
+| Nozzle | sized for required tubing| 3/16" Barb to 1/8" NPT Male Thread  | <img src="assets/DriveMotor.webp" width="80" /> |
+| Thermistor | changes resistance value based upon temperature |10K NTC Thermistor | <img src="assets/WeaponsESC.webp" width="80" /> |
+| Diode | Used to prevent energy build up from inductive load | 15A 45V Diode| <img src="assets/ESC.webp" width="80" /> |
+| Arduino Nano | Used to run PID loop | Arduino Nano | <img src="assets/DeadShaft.jpg" width="80" /> |
+| 20 AWG Wire | Used to safely transmit power to pump | 20 AWG doorbell wire| <img src="assets/CarbonFiberPlate.jpg" width="80" /> |
+| MOSFET | Used to control pump power | 55V, 74A MOSFET | <img src="assets/BearingCombat.jpg" width="80" /> |
 
 
 ## Initial Calculations and Sizing
