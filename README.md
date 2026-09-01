@@ -39,15 +39,17 @@ The initial sizing of the cold plates was calculated using equations provided by
 *Initial calculations used by Advanced Thermal Solutions*
 
 ### Plots
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/Picture1.png" width="56%" />
+<img src="assets/Pump Work Straight Fin.png" width="56%" />
 
 *Plots of straight and pin fin Cold Plate*
 
-<img src="assets/Screenshot 2026-08-31 212102.png" width="56%" />
+<img src="assets/Serpentine Power.png" width="56%" />
+<img src="assets/Serpentine Surface Temp.png" width="56%" />
 
 *Plots of serpentine cold plate*
 
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/Screenshot 2026-08-30 232313.png" width="56%" />
 
 *Gyroid Structure generated in MATLAB*
 
@@ -56,11 +58,11 @@ The initial sizing of the cold plates was calculated using equations provided by
 Afterwards the 4 cold plates were designed in Solidworks following the design specifications. The first simulations used initial conditions of .4 L/min, 100 watts and an aluminum construction with water as the working fluid. Further tests were done by evaluating how a different # of fins or fluid velocity affected the heat flux. Lastly a Mesh independence survey was done to verify the simulation was best representing the results.
 
 ### Simulation Results
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/pressure optimised mesh.png" width="56%" />
 
 *Initial Serpentine Results*
 
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/velocity 20% velocity.png" width="56%" />
 
 *Flow speed and changing fluid temperature*
 
