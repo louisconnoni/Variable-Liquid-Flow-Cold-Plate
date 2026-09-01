@@ -7,7 +7,7 @@
 
 
 <!-- Final image of testing -->
-<img src="assets/CombatRobotCompImage.png" width="55%" />
+<img src="assets/Complete model.JPG" width="55%" />
 
 ## Overview
 
