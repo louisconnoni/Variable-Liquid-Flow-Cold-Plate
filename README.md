@@ -92,6 +92,8 @@ A second circuit was used for the PWM circuit. a 2.2k pulldown was used to prote
 
 
 <!-- Circuit Board with Callouts -->
+<img src="assets/WiringDiagram1.png" width="30%" />
+<img src="assets/WiringDiagram2.png" width="30%" />
 <img src="assets/Wiring.JPG" width="30%" />
 <!-- Temperature Sensing code -->
 <!-- <img src="assets/freedom-weapon-cad.png" width="49%" /> -->
@@ -99,6 +101,74 @@ A second circuit was used for the PWM circuit. a 2.2k pulldown was used to prote
 <!-- <img src="assets/freedom-weapon-cad.png" width="49%" /> -->
 
 *Temperature sensing circuit and PID loop*
+
+## Temperature Sensing Code
+'''
+      #include <PID_v1.h>
+      
+      
+      const int SENSOR_PINS[] = {A0, A1, A2};
+      const int NUM_SENSORS = 3;
+      
+      
+      const float R_FIXED = 10000.0; // 10k fixed resistor
+      const float R0 = 10000.0;      // 10k thermistor nominal resistance at 25°C
+      const float T0 = 298.15;       // 25°C in Kelvin
+      const float BETA = 3950.0;     // Beta coefficient (typically 3435 - 3950)
+      
+      void setup() {
+        Serial.begin(9600);
+      }
+      
+      void loop() {
+        for (int i = 0; i < NUM_SENSORS; i++) {
+          float tempC = readTemperatureC(SENSOR_PINS[i]);
+          float tempF = (tempC * 9.0 / 5.0) + 32.0;
+      
+          Serial.print("Sensor ");
+          Serial.print(i + 1);
+          Serial.print(" (A");
+          Serial.print(i);
+          Serial.print("): ");
+      
+          if (tempC > -200) { // Check for valid reading
+            Serial.print(tempC, 1);
+            Serial.print(" °C / ");
+            Serial.print(tempF, 1);
+            Serial.print(" °F    ");
+          } else {
+            Serial.print("Error    ");
+          }
+        }
+        Serial.println(); // Print a new line after reading all 3 sensors
+      
+        delay(1000); // Read every second
+      }
+      
+      
+      float readTemperatureC(int pin) {
+        // Dummy read + tiny delay to let the Arduino ADC capacitor settle 
+        // when rapidly switching between multiplexed analog channels
+        analogRead(pin); 
+        delay(5);
+        int adcValue = analogRead(pin);
+      
+        if (adcValue <= 0) return -999.0; // Prevent division by zero
+      
+        // Calculate thermistor resistance
+        float rTh = R_FIXED * ((1023.0 / (float)adcValue) - 1.0);
+      
+        // Beta equation
+        float steinhart = rTh / R0;
+        steinhart = log(steinhart);
+        steinhart /= BETA;
+        steinhart += 1.0 / T0;
+        float tempKelvin = 1.0 / steinhart;
+      
+        return tempKelvin - 273.15; // Convert Kelvin to Celsius
+      }
+
+'''
 
 ## Fabrication
 
