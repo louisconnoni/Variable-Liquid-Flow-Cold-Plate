@@ -22,11 +22,11 @@ The second aspect of the project was to design a PID loop to control the flow ra
 |---|---|---|---|
 | Pump | Sized to provide sufficient flow to pull heat away  | Kamoer 400ml/min | <img src="assets/Pump.jpg" width="80" /> |
 | Nozzle | sized for required tubing| 3/16" Barb to 1/8" NPT Male Thread  | <img src="assets/Barb.jpg" width="80" /> |
-| Thermistor | changes resistance value based upon temperature |10K NTC Thermistor | <img src="thermistor.jpg" width="80" /> |
-| Diode | Used to prevent energy build up from inductive load | 15A 45V Diode| <img src="assets/ESC.webp" width="80" /> |
-| Arduino Nano | Used to run PID loop | Arduino Nano | <img src="assets/DeadShaft.jpg" width="80" /> |
-| 20 AWG Wire | Used to safely transmit power to pump | 20 AWG doorbell wire| <img src="assets/CarbonFiberPlate.jpg" width="80" /> |
-| MOSFET | Used to control pump power | 55V, 74A MOSFET | <img src="assets/BearingCombat.jpg" width="80" /> |
+| Thermistor | changes resistance value based upon temperature |10K NTC Thermistor | <img src="Thermistor.jpg" width="80" /> |
+| Diode | Used to prevent energy build up from inductive load | 15A 45V Diode| <img src="assets/Diode.jpg" width="80" /> |
+| Arduino Nano | Used to run PID loop | Arduino Nano | <img src="assets/Arduino Nano.jpg" width="80" /> |
+| 20 AWG Wire | Used to safely transmit power to pump | 20 AWG doorbell wire|  |
+| MOSFET | Used to control pump power | 55V, 74A MOSFET | <img src="assets/Mosfet.jpg" width="80" /> |
 
 
 ## Initial Calculations and Sizing
@@ -34,8 +34,8 @@ The initial sizing of the cold plates was calculated using equations provided by
 
 
 ### Calculations
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
-
+<img src="assets/Screenshot 2026-06-12 154117.png" width="56%" />
+<img src="assets/Screenshot 2026-08-31 212102.png" width="10%" />
 *Initial calculations used by Advanced Thermal Solutions*
 
 ### Plots
@@ -43,7 +43,7 @@ The initial sizing of the cold plates was calculated using equations provided by
 
 *Plots of straight and pin fin Cold Plate*
 
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/Screenshot 2026-08-31 212102.png" width="56%" />
 
 *Plots of serpentine cold plate*
 
