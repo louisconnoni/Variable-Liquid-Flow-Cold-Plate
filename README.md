@@ -62,13 +62,27 @@ Afterwards the 4 cold plates were designed in Solidworks following the design sp
 
 *Initial Serpentine Results*
 
-<img src="assets/velocity 20% velocity.png" width="56%" />
+<img src="assets/velocity2.png" width="56%" />
+<img src="assets/velocity10pin.png" width="56%" />
+<img src="assets/velocity16fin.png" width="56%" />
 
 *Flow speed and changing fluid temperature*
 
-<img src="assets/Screenshot 2026-08-12 220451.png" width="56%" />
+<img src="assets/Screenshot 2026-08-31 211738.png" width="56%" />
 
-*Mesh Independance Study Plot*
+*Results of Straight Fin*
+
+<img src="assets/Screenshot 2026-08-31 165752.png" width="56%" />
+
+*Results of Pin Fin*
+
+<img src="assets/Screenshot 2026-08-31 162924.png" width="56%" />
+
+*Mesh Independance Study Plot for Straight Fin*
+
+<img src="assets/Screenshot 2026-08-31 211900.png" width="56%" />
+
+*Mesh Independance Study Plot for Pin Fin*
 
 ### Control Wiring
 
@@ -78,7 +92,7 @@ A second circuit was used for the PWM circuit. a 2.2k pulldown was used to prote
 
 
 <!-- Circuit Board with Callouts -->
-<img src="assets/CADCombatRobot.png" width="56%" />
+<img src="assets/Wiring.JPG" width="30%" />
 <!-- Temperature Sensing code -->
 <!-- <img src="assets/freedom-weapon-cad.png" width="49%" /> -->
 <!-- PID Code -->
@@ -89,7 +103,7 @@ A second circuit was used for the PWM circuit. a 2.2k pulldown was used to prote
 ## Fabrication
 
 <!-- PLA PROTOTYPE -->
-<img src="assets/FREEDOMPLACROPPED.jpeg" width="56%" />
+<img src="assets/Complete model.JPG" width="30%" />
 
 *prototypes were created in PLA to be used for flow testing evaluating working pressure drop and flow.*
 
